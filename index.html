@@ -4,108 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insta Metrics</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script type="module" src="metrics.js"></script>
-    <script type="module" src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script type="module" src="./smetrics.js"></script>
+    <script type="module" src="./scripts/script.js" defer></script>
 </head>
 <body>
-    <section>
+    <header>
+        <h1>Calculadora de Métricas</h1>
+    </header>
+    <section id="root">
         <div class="form" id="div-feed-engagement">
-            <h1>Taxa de Engajamento no Feed</h1>
+            <div class="title">
+                <h1>Engajamento no Feed</h1>
+            </div>
             <form id="form-feed-engagement">
-                <label for="likes">Likes</label>
-                <input type="number" name="likes" id="feed-likes" required>
-                
-                <label for="comments">Comentários</label>
-                <input type="number" name="comments" id="feed-comments" required>
-
-                <label for="shares">Compartilhamento</label>
-                <input type="number" name="shares" id="feed-shares" required>
-
-                <label for="range">Alcance</label>
-                <input type="number" name="range" id="feed-range" required> 
+                <div class="inputs-div">
+                    <div class="label-input">
+                        <label for="likes">Likes</label>
+                        <input type="number" name="likes" id="feed-likes" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="comments">Comentários</label>
+                        <input type="number" name="comments" id="feed-comments" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="shares">Compartilhamento</label>
+                        <input type="number" name="shares" id="feed-shares" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="range">Alcance</label>
+                        <input type="number" name="range" id="feed-range" required> 
+                    </div>
+                </div>
                
                 <button type="submit">Calcular</button>
-            </form>
-            <p id="result-form-feed-engagement">Calcule para obter um resultado!</p>
-            <button id="redo-form-feed">Refazer</button>
+            </form>    
+            <div class="result-redo">
+                <p id="result-form-feed-engagement">Calcule para obter um resultado!</p>
+                <button class="redo-button" id="redo-form-feed"></button>            
+            </div>        
         </div>
-        <div class="form" id="div-stories-anwers">
-            <h1>Taxa de Respostas nos Stories</h1>
+
+        <div class="form form-small" id="div-stories-anwers">
+            <div class="title">
+                <h1>Respostas nos Stories</h1>
+            </div>
             <form id="form-stories-answers">
-                <label for="answers">Respostas</label>
-                <input type="number" name="answers" id="stories-answers">
-
-                <label for="users-achieved">Pessoas Alcançadas</label>
-                <input type="number" name="users-achieved" id="stories-users-achieved">
-
+                <div class="inputs-div">
+                    <div class="label-input">
+                        <label for="answers">Respostas</label>
+                        <input type="number" name="answers" id="stories-answers">
+                    </div class="label-input">
+                    <div class="label-input">
+                        <label for="users-achieved">Pessoas Alcançadas</label>
+                        <input type="number" name="users-achieved" id="stories-users-achieved">
+                    </div>
+                </div>
                 <button type="submit">Calcular</button>
             </form>
-            <p id="result-form-stories-answers">Calcule para obter um resultado!</p>
-            <button id="redo-form-stories-answers">Refazer</button>
+            <div class="result-redo">
+                <p id="result-form-stories-answers">Calcule para obter um resultado!</p>
+                <button class="redo-button" id="redo-form-stories-answers"></button>
+            </div>
         </div>
-        <div class="form" id="div-stories-exits">
-            <h1>Taxa de Saída nos Stories</h1>
-            <form id="form-exits-stories">
-                <label for="exits">Saídas</label>
-                <input type="number" name="exits" id="exits-stories">
 
-                <label for="users-achieved">Pessoas Alcançadas</label>
-                <input type="number" name="users-achieved" id="exits-stories-users-achieved">
-
-                <button type="submit">Calcular</button>
-            </form>
-            <p id="result-form-exits-stories">Calcule para obter um resultado!</p>
-            <button id="redo-form-exits-stories">Refazer</button>
-        </div>
-        <div class="form" id="div-tapback">
-            <h1>Taxa de Tap-Back</h1>
+        <div class="form form-small" id="div-tapback">
+            <div class="title">
+                <h1>Tap-Back</h1>
+            </div>
             <form id="form-tapback">
-                <label for="tapback">Cliques para voltar</label>
-                <input type="number" name="tapback" id="tapback">
-
-                <label for="users-achieved">Pessoas Alcançadas</label>
-                <input type="number" name="users-achieved" id="tapback-users-achieved">
+                <div class="inputs-div">
+                    <div class="label-input">
+                        <label for="tapback">Cliques para voltar</label>
+                        <input type="number" name="tapback" id="tapback">
+                    </div>
+                    <div class="label-input">
+                        <label for="users-achieved">Pessoas Alcançadas</label>
+                        <input type="number" name="users-achieved" id="tapback-users-achieved">
+                    </div>
+                </div>
 
                 <button type="submit">Calcular</button>
             </form>
-            <p id="result-form-tapback">Calcule para obter um resultado!</p>
-            <button id="redo-form-tapback">Refazer</button>
+            <div class="result-redo">
+                <p id="result-form-tapback">Calcule para obter um resultado!</p>
+                <button class="redo-button" id="redo-form-tapback"></button>
+            </div>
         </div>
-        <div class="form" id="div-tapfoward">
-            <h1>Taxa de Tap-Foward</h1>
+
+        <div class="form form-small" id="div-tapfoward">
+            <div class="title">
+                <h1>Tap-Foward</h1>
+            </div>
             <form id="form-tapfoward">
-                <label for="tapfoward">Cliques para avançar</label>
-                <input type="number" name="tapfoward" id="tapfoward">
-
-                <label for="users-achieved">Pessoas Alcançadas</label>
-                <input type="number" name="users-achieved" id="tapfoward-users-achieved">
+                <div class="inputs-div">
+                    <div class="label-input">
+                        <label for="tapfoward">Cliques para avançar</label>
+                        <input type="number" name="tapfoward" id="tapfoward">
+                    </div>
+                    <div class="label-input">
+                        <label for="users-achieved">Pessoas Alcançadas</label>
+                        <input type="number" name="users-achieved" id="tapfoward-users-achieved">
+                    </div>
+                </div>
 
                 <button type="submit">Calcular</button>
             </form>
-            <p id="result-form-tapfoward">Calcule para obter um resultado!</p>
-            <button id="redo-form-tapfoward">Refazer</button>
+            <div class="result-redo">
+                <p id="result-form-tapfoward">Calcule para obter um resultado!</p>
+                <button class="redo-button" id="redo-form-tapfoward"></button>
+            </div>
         </div>
+
+        <div class="form form-small" id="div-stories-exits">
+            <div class="title">
+                <h1>Saída nos Stories</h1>
+            </div>
+            <form id="form-exits-stories">
+                <div class="inputs-div">
+                    <div class="label-input">
+                        <label for="exits">Saídas</label>
+                        <input type="number" name="exits" id="exits-stories">
+                    </div>
+                    <div class="label-input">
+                        <label for="users-achieved">Pessoas Alcançadas</label>
+                        <input type="number" name="users-achieved" id="exits-stories-users-achieved">
+                    </div>
+                </div>
+
+                <button type="submit">Calcular</button>
+            </form>
+            <div class="result-redo">
+                <p id="result-form-exits-stories">Calcule para obter um resultado!</p>
+                <button class="redo-button" id="redo-form-exits-stories"></button>
+            </div>
+        </div>
+
         <div class="form" id="div-reels-engagement">
-            <h1>Taxa de Engajamento no Reels</h1>
+            <div class="title">
+                <h1>Engajamento no Reels</h1>
+            </div>
             <form id="form-reels-engagement">
-                <label for="likes">Likes</label>
-                <input type="number" name="likes" id="reels-likes" required>
-                
-                <label for="comments">Comentários</label>
-                <input type="number" name="comments" id="reels-comments" required>
-
-                <label for="shares">Compartilhamento</label>
-                <input type="number" name="shares" id="reels-shares" required>
-
-                <label for="range">Alcance</label>
-                <input type="number" name="range" id="reels-range" required> 
+                <div class="inputs-div">
+                    <div class="label-input">
+                        <label for="likes">Likes</label>
+                        <input type="number" name="likes" id="reels-likes" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="comments">Comentários</label>
+                        <input type="number" name="comments" id="reels-comments" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="shares">Compartilhamento</label>
+                        <input type="number" name="shares" id="reels-shares" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="range">Alcance</label>
+                        <input type="number" name="range" id="reels-range" required> 
+                    </div>
+                </div>
                
                 <button type="submit">Calcular</button>
             </form>
-            <p id="result-form-reels-engagement">Calcule para obter um resultado!</p>
-            <button id="redo-form-reels">Refazer</button>
+            <div class="result-redo">
+                <p id="result-form-reels-engagement">Calcule para obter um resultado!</p>
+                <button class="redo-button" id="redo-form-reels"></button>
+            </div>
         </div>
     </section>
+    <footer>
+        <p>Feito por <a href="https://github.com/davisoutoneri">Davi Souto</a> </p>
+    </footer>
 </body>
 </html>
