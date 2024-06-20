@@ -16,110 +16,258 @@
     --stories-color: #D52A4E;
     --reels-color: #F8AC01;
 
-    --light-text-color: #FFFFFF;
-    --dark-text-color: #021634;
+    --primary-color: #CDE7BE;
+    --secondary-color: #662C91;
+
+    --terciary-color: #FCDDF2;
+    --fourth-color: #100d0d;
 
     font-family: 'Titillium Web';
+    a {
+        text-decoration: none;
+    }
 }
 
-body{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    background-color: antiquewhite;
+#backToTopButton{
+    display: none;
 }
 
-a{
-    text-decoration: none;
-}
-
-header, footer{
+header, footer {
     text-align: center;
 }
 
-footer {
-    padding-top: 100px;
-}
-
-#root {
+.div-form {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 5px; 
-
-    min-height: 60vh;
 }
-
-
-
-.form {
-    height: 400px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    padding: 0.5rem;
-}
-
-form{
-    background-color: red;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-}
-button{
+.div-form-content{
     width: 100%;
-}
+    height: 30rem;
 
-.form h1 {
-    font-size: 1rem;
-    text-align: center;
-    background-color: pink;
-}
-.title {
-    height: 50px;
-    width: 100%;
-}
-
-.label-input {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0.2rem;
 }
 
-.result-redo {
-    padding: 5px;
-    background-color: #F8AC01;
-    width: 100%;
-
+.div-form-content form {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+form button {
+    width: 50%;
+    height: 2rem;
+    margin: auto;
+    border: solid 1px;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+form input {
+    height: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 0.23rem;
+}
+
+.div-form-content .div-inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.div-form-content .div-inputs .div-label-input{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.div-result-redo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 2px;
-}
-.result-redo p {
-    width: 180px;
-    height: 50px;
 }
 
-
-.redo-button {
-    background-image: url('../assets/icons/refresh.svg');
-    background-size: cover;
-    width: 30px;
-    height: 30px;
+.div-result-redo p {
+    font-size: 1rem;
+    margin: 1rem;
 }
 
-@media (min-width: 320px) {
-    #root{
+.redo-button{
+    background-image: url("../assets/icons/refresh.svg");
+    cursor: pointer;
+    background-size: contain;
+    background-color: var(--primary-color);
+    border: 0.5px solid var(--secondary-color);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}.redo-button:hover{
+    transform: rotate(-360deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+#div-feed-engagement { 
+    background-color: var(--feed-color);
+}
+
+#div-stories-answers {
+    background-color: var(--stories-color);
+}
+
+#div-tapback {
+    background-color: var(--stories-color);
+    
+}
+
+#div-tapfoward {
+    background-color: var(--stories-color);
+}
+
+#div-stories-exits {
+    background-color: var(--stories-color);
+}
+
+#div-reels-engagement{
+    background-color: var(--reels-color);
+}
+
+/* Telas maiores que um Tablet */
+
+@media only screen and (min-width: 769px){
+    header, footer{
+        height: 3rem;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .div-form{
+        width: 200px;
+    
+        flex: 1;
+        /* cursor: pointer; */
+    } .div-form:hover {
+        flex: 3;
+    }
+    
+    .div-form > .div-form-content {
+        visibility: hidden;
+    } .div-form:hover > .div-form-content {
+        visibility: visible;
+        width: 20rem;
+    }
+    
+    .div-form > .div-form-showcase {
+        visibility: visible;
+    } .div-form:hover > .div-form-showcase {
+        visibility: hidden;
+    }
+
+    .mobile-only { 
+        display: none;
+    }
+}
+
+/* TABLET */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    .mobile-only{
+        display: none;
+    }
+}
+
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header, footer {
+        text-align: center;
+        height: 35rem;
+    }
+
+    header{
+        position: relative;
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/images/mobile-background.jpg");
+        background-size: cover;
+        
+        opacity: 0.5;
+    }
+
+    header .header-content{
+        position: relative;
+        z-index: 1;
+    }
+
+    .mobile-only{
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .anchors{
+        width: 13rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .anchor-button {
+       width: 100%; 
+       border: solid 0.5px var(--secondary-color);
+       border-radius: 0.5rem;
+       background-color: var(--primary-color);
+       padding: 1rem;
+       color: var(--secondary-color);
+       font-size: 0.8rem;
+    } 
+
+    .div-form {
+        height: 40rem;
+    }
+    
+
+    #backToTopButton {
+        display: block;
+        position: fixed;
+        bottom: 1rem;
+        right: 0.5rem;
+      
+        opacity: 0;
+        visibility: hidden;
+      
+        transform: translateY(100%);
+        transition: 200ms;
+      }
+      #backToTopButton.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
 }
